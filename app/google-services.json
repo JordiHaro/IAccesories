@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "609990060152",
+    "project_id": "iaccesories-7300a",
+    "storage_bucket": "iaccesories-7300a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609990060152:android:5c4702f352a2e1582a658d",
+        "android_client_info": {
+          "package_name": "com.example.iaccesories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "609990060152-1pvsaqa9ee04jdj6tq9hruqre5fbvt0r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATrrrTuzmpDRu712A4zfTTO-zIk8fIE6s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "609990060152-1pvsaqa9ee04jdj6tq9hruqre5fbvt0r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
