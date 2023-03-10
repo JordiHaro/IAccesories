@@ -55,9 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
                 // =====================================================================
 
                 // En la pantalla de login, serà semblant, però fent servir el
-                mAuth.createUserWithEmailAndPassword(email, password)
-
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -77,18 +75,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 //      i que ho tornin a provar.
                             }
                         });
-
-               /*mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                   @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                    }
-                });*/
             }
         });
     }
@@ -97,10 +83,10 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        /*mUsuariActual = mAuth.getCurrentUser();
+        mUsuariActual = mAuth.getCurrentUser();
         if(mUsuariActual != null) {
             Intent intent = new Intent(RegisterActivity.this, PantallaPrincipal.class);
             startActivity(intent);
-        }*/
+        }
     }
 }
