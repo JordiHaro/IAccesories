@@ -42,6 +42,41 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = mETemail.getText().toString();
                 String password = mETpassword.getText().toString();
 
+                // =====================================================================
+                // He tret el "this" del OnCompleteListener.
+                // Dins del codi onComplete, és on heu de fer les accions que voleu,
+                // per exemple, mostrar un Toast dient que s'ha registrat correctament,
+                // i redirigint a l'usuari a la pantalla principal.
+                // Com a acció important, també haureu de guardar l'usuari a
+                // FirebaseDatabase, ja que el Authentication, només guarda
+                // email i password. En l'objecte Usuari de la Database, hi podeu
+                // guardar el id (que l'haurà generat el FirebaseAuthenticator),
+                // el nom, el email, i les altres dades que cregueu oportunes.
+                // =====================================================================
+
+                // En la pantalla de login, serà semblant, però fent servir el
+                mAuth.createUserWithEmailAndPassword(email, password)
+
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                // Guardar l'usuari en el currentUser.
+                                // Guardar usuari a FirebaseDatabase.
+                                // Mostrar Toast.
+                                // Obrir Activity Principal.
+                            }
+                        })
+
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+
+                                // Mostrar Toast dient que hi ha hagut un
+                                //      error connectant en la base de dades,
+                                //      i que ho tornin a provar.
+                            }
+                        });
 
                /*mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                    @Override
