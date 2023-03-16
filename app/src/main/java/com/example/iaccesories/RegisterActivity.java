@@ -58,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-
+                                Usuari usuari = new Usuari();
                                 // Guardar l'usuari en el currentUser.
                                 // Guardar usuari a FirebaseDatabase.
                                 // Mostrar Toast.
@@ -85,8 +85,8 @@ public class RegisterActivity extends AppCompatActivity {
         super.onStart();
         mUsuariActual = mAuth.getCurrentUser();
         if(mUsuariActual != null) {
-            Intent intent = new Intent(RegisterActivity.this, PantallaPrincipal.class);
-            startActivity(intent);
+            //Intent intent = new Intent(RegisterActivity.this, PantallaPrincipal.class);
+            //startActivity(intent);
         }
     }
 }
