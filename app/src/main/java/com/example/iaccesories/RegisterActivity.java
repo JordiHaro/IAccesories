@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -23,6 +25,8 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseUser mUsuariActual;
     private EditText mETemail;
     private EditText mETpassword;
+    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://iaccesories-7300a-default-rtdb.europe-west1.firebasedatabase.app/");
+    private DatabaseReference myRef = database.getReference();
 
 
     @Override
@@ -59,6 +63,16 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 Usuari usuari = new Usuari();
+
+                                usuari.setEmail(email);
+                                usuari.setIdUsuario(mAuth.getUid());
+                                usuari.setTipoUsuario("usuari");
+
+                                myRef.child("usuari").child(mAuth.getUid()).setValue(usuari);
+
+                                Intent intent = new Intent(RegisterActivity.this, PantallaPrincipal.class);
+                                startActivity(intent);
+
                                 // Guardar l'usuari en el currentUser.
                                 // Guardar usuari a FirebaseDatabase.
                                 // Mostrar Toast.
