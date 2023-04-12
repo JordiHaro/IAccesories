@@ -82,7 +82,6 @@
         android:layout_margin="25dp"
         android:textColor="@color/white"
         android:text="Registrarme">
-
     </TextView>
 
 </RelativeLayout>
