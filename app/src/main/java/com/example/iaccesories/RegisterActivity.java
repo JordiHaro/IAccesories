@@ -3,11 +3,13 @@ package com.example.iaccesories;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,8 +29,10 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mETpassword;
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://iaccesories-7300a-default-rtdb.europe-west1.firebasedatabase.app/");
     private DatabaseReference myRef = database.getReference();
+    private TextView mTVlogin;
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,15 @@ public class RegisterActivity extends AppCompatActivity {
         mETpassword = findViewById(R.id.ET_password);
         mBregistre = findViewById(R.id.BT_registe);
         mAuth = FirebaseAuth.getInstance();
+        mTVlogin = findViewById(R.id.TV_login);
+
+        mTVlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mBregistre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +85,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 Intent intent = new Intent(RegisterActivity.this, PantallaPrincipal.class);
                                 startActivity(intent);
+                                Intent intent2 = new Intent(RegisterActivity.this, LoginActivity.class);
+                                startActivity(intent2);
 
                                 // Guardar l'usuari en el currentUser.
                                 // Guardar usuari a FirebaseDatabase.

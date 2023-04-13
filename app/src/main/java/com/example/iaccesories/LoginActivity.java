@@ -29,6 +29,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mETemail = findViewById(R.id.ET_email);
+        mETpassword = findViewById(R.id.ET_password);
         mTVregister = findViewById(R.id.TV_register);
         mAuth = FirebaseAuth.getInstance();
         mBTAcceder = findViewById(R.id.BT_acceder);
