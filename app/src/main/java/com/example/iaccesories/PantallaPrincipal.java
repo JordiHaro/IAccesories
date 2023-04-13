@@ -1,8 +1,10 @@
 package com.example.iaccesories;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -11,7 +13,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class PantallaPrincipal extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-
+    Fragment  fragment;
     InicioFragment inicioFragment = new InicioFragment();
     NoticiasFragment noticiasFragment = new NoticiasFragment();
     ForoFragment foroFragment = new ForoFragment();
@@ -29,22 +31,24 @@ public class PantallaPrincipal extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()){
+                Log.d("---", ""+ item.getItemId());
+                switch (item.getItemId()) {
                     case R.id.Inicio:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new InicioFragment()).commit();
+                        fragment = new InicioFragment();
                         return true;
                     case R.id.Noticias:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new NoticiasFragment()).commit();
+                        fragment = new NoticiasFragment();
                         return true;
                     case R.id.Foro:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, foroFragment).commit();
+                        fragment = new ForoFragment();
                         return true;
                     case R.id.Contacto:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, contactoFragment).commit();
+                        fragment = new ContactoFragment();
                         return true;
                 }
 
                 return false;
             }
         });
+    }
 }
