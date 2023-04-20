@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -46,11 +47,16 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        //anar a la pantalla principal y altres accions
-                        Intent intent = new Intent(LoginActivity.this, PantallaPrincipal.class);
-                        startActivity(intent);
+                        if(task.isSuccessful()) {
+                            Intent intent = new Intent(LoginActivity.this, PantallaPrincipal.class);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "No estas registrado en nuestra base de datos", Toast.LENGTH_LONG).show();
+                        }
                     }
+
                 });
+
 
 
             }
