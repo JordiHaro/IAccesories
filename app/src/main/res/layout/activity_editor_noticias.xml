@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditorNoticias"
+    android:background="#444E87">
+
+    <TextView
+        android:id="@+id/PP_Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="iAccesories"
+        android:paddingVertical="10dp"
+        android:gravity="center"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/TV_AñadeNoticia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PP_Titulo"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Añade una noticia"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/TV_NombreNoticia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_AñadeNoticia"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"
+        android:text="Titular">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/ET_NombreNoticia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_NombreNoticia"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:textColor="@color/white"
+        android:text="Nombre">
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/TV_Descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ET_NombreNoticia"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        android:text="Descripcion"
+        android:textColor="@color/white">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/ET_Descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_Descripcion"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:textColor="@color/white"
+        android:text="Descripcion">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/BT_AñadirNoticia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ET_Descripcion"
+        android:layout_marginTop="50dp"
+        android:text="Añadir Noticia">
+
+    </Button>
+
+</RelativeLayout>

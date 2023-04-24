@@ -20,12 +20,13 @@
         android:gravity="center"
         android:textSize="25sp" />
 
+
     <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/container"
         android:layout_above="@id/bottom_navegation"
-        />
+        android:layout_marginBottom="-2dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navegation"
