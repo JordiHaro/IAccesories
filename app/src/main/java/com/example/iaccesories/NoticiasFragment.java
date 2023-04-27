@@ -3,6 +3,7 @@ package com.example.iaccesories;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -13,16 +14,20 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class NoticiasFragment extends Fragment {
 
     private Button mBTEditorNoticias;
     private FirebaseAuth mAuth;
     private FirebaseUser mUsuariActual;
-    private FirebaseDatabase mDataBase;
-    private DatabaseReference mReference;
+    private FirebaseDatabase mDataBase = FirebaseDatabase.getInstance("https://iaccesories-7300a-default-rtdb.europe-west1.firebasedatabase.app/");
+    private DatabaseReference mReference = mDataBase.getReference();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,7 +61,31 @@ public class NoticiasFragment extends Fragment {
 
     public void BuscarUsuariActual() {
 
+        //Query query = mDBReference.orderByChild("UID").equalTo(mUsuariActual.getUid());
+        Query query = mReference.orderByChild("email").equalTo(mUsuariActual.getEmail());
 
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds : snapshot.getChildren()) {
 
+                    String email = "" + ds.child("email").getValue();
+                    String tipoUsuario = "" + ds.child("tipoUsuario").getValue();
+
+                    if (!email.isEmpty()) {
+                        mBTEditorNoticias.setVisibility(View.GONE);
+
+                        if (tipoUsuario == "usuari") {
+                            mBTEditorNoticias.setVisibility(View.GONE);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

@@ -35,10 +35,25 @@
     </TextView>
 
     <EditText
-        android:id="@+id/ET_email"
+        android:id="@+id/ET_NomUsuari"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TV_titulregistre"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="35dp"
+        android:hint="Usuario"
+        android:layout_marginTop="25dp"
+        android:background="@color/white"
+        android:padding="5dp">
+
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/ET_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ET_NomUsuari"
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="35dp"
         android:hint="Email"
