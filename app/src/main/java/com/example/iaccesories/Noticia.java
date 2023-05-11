@@ -4,6 +4,9 @@ public class Noticia {
 
     private String Nombre, Descripcion, mUid;
 
+    public Noticia(){
+    }
+
     public Noticia(String nombre, String descripcion, String mUid) {
         Nombre = nombre;
         Descripcion = descripcion;
@@ -36,10 +39,11 @@ public class Noticia {
 
     @Override
     public String toString() {
-        return "Noticia{" +
+        /*return "Noticia{" +
                 "Nombre='" + Nombre + '\'' +
                 ", Descripcion='" + Descripcion + '\'' +
                 ", mUid='" + mUid + '\'' +
-                '}';
+                '}';*/
+        return "Nombre: " + Nombre + "\n" + Descripcion;
     }
 }
