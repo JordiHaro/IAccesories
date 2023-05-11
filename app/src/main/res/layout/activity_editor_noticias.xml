@@ -50,10 +50,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TV_NombreNoticia"
-        android:layout_marginTop="25dp"
         android:layout_marginLeft="25dp"
-        android:textColor="@color/white"
-        android:text="Nombre">
+        android:layout_marginTop="25dp"
+        android:text="Nombre"
+        android:textColor="@color/white">
 
     </EditText>
 
@@ -74,10 +74,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TV_Descripcion"
-        android:layout_marginTop="25dp"
         android:layout_marginLeft="25dp"
-        android:textColor="@color/white"
-        android:text="Descripcion">
+        android:layout_marginTop="25dp"
+        android:text="Descripcion"
+        android:textColor="@color/white">
 
     </EditText>
 

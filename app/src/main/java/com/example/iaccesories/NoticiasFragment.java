@@ -10,7 +10,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,6 +23,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NoticiasFragment extends Fragment {
 
     private Button mBTEditorNoticias;
@@ -28,6 +33,9 @@ public class NoticiasFragment extends Fragment {
     private FirebaseUser mUsuariActual;
     private FirebaseDatabase mDataBase = FirebaseDatabase.getInstance("https://iaccesories-7300a-default-rtdb.europe-west1.firebasedatabase.app/");
     private DatabaseReference mReference = mDataBase.getReference();
+    private ListView mLvCarta;
+    private List<Noticia> mListaNoticias = new ArrayList<>();
+    private ArrayAdapter<Noticia> mAdapterNoticias;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +46,7 @@ public class NoticiasFragment extends Fragment {
         mBTEditorNoticias = v.findViewById(R.id.BT_EditorNoticias);
         mAuth = FirebaseAuth.getInstance();
         mUsuariActual = mAuth.getCurrentUser();
+        mLvCarta = v.findViewById(R.id.LV_Carta);
 
         Log.d("--->", mUsuariActual.getEmail());
 
@@ -50,6 +59,7 @@ public class NoticiasFragment extends Fragment {
         });
 
         BuscarUsuariActual();
+        ListarNoticias();
 
 
 
@@ -59,25 +69,54 @@ public class NoticiasFragment extends Fragment {
 
     }
 
+    private void ListarNoticias() {
+
+        mReference.child("Noticias").addValueEventListener(new ValueEventListener() {
+
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Log.d("----",snapshot.toString());
+
+                mListaNoticias.clear();
+
+                for (DataSnapshot pizzaActual: snapshot.getChildren()) {
+
+                    Noticia noticia = pizzaActual.getValue(Noticia.class);
+                    mListaNoticias.add(noticia);
+                    Log.d("----***",noticia.toString());
+                }
+
+                mAdapterNoticias = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, mListaNoticias);
+                mLvCarta.setAdapter(mAdapterNoticias);
+
+        }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     public void BuscarUsuariActual() {
 
         //Query query = mDBReference.orderByChild("UID").equalTo(mUsuariActual.getUid());
-        Query query = mReference.orderByChild("email").equalTo(mUsuariActual.getEmail());
+        Query query = mReference.child("usuari").orderByChild("email").equalTo(mUsuariActual.getEmail());
+
+        //Log.d("----", "BuscarUsuariActual: " + mUsuariActual.getEmail());
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds : snapshot.getChildren()) {
-
                     String email = "" + ds.child("email").getValue();
                     String tipoUsuario = "" + ds.child("tipoUsuario").getValue();
 
-                    if (!email.isEmpty()) {
+                    if (tipoUsuario.equals("admin")) {
+                        mBTEditorNoticias.setVisibility(View.VISIBLE);
+                    } else {
                         mBTEditorNoticias.setVisibility(View.GONE);
-
-                        if (tipoUsuario == "usuari") {
-                            mBTEditorNoticias.setVisibility(View.GONE);
-                        }
                     }
                 }
             }
