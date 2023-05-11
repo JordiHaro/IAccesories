@@ -34,19 +34,18 @@ public class PantallaPrincipal extends AppCompatActivity {
                 Log.d("---", ""+ item.getItemId());
                 switch (item.getItemId()) {
                     case R.id.Inicio:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new InicioFragment()).commit();
+                        fragment = new InicioFragment();
                         return true;
                     case R.id.Noticias:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new NoticiasFragment()).commit();
+                        fragment = new NoticiasFragment();
                         return true;
                     case R.id.Foro:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new ForoFragment()).commit();
+                        fragment = new ForoFragment();
                         return true;
                     case R.id.Contacto:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new ContactoFragment()).commit();
+                        fragment = new ContactoFragment();
                         return true;
                 }
-
 
                 return false;
             }
