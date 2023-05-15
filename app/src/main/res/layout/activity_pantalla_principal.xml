@@ -29,32 +29,6 @@
         android:layout_marginBottom="-2dp" >
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/Bienvenidos"
-        android:layout_width="wrap_content"
-        android:layout_height="76dp"
-        android:layout_below="@+id/PP_Titulo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="50px"
-        android:layout_marginTop="50px"
-        android:text="Bienvenidos!"
-        android:textColor="@color/white"
-        android:textSize="80px" />
-
-    <TextView
-        android:id="@+id/Descripcion"
-        android:layout_width="950px"
-        android:layout_height="800px"
-        android:layout_below="@+id/Bienvenidos"
-        android:layout_marginLeft="50px"
-        android:layout_marginTop="50px"
-        android:layout_marginRight="50px"
-        android:lineSpacingExtra="8dp"
-        android:gravity="center_horizontal"
-        android:text="IAccesories es una aplicación web que tiene como objetivo proporcionar información actualizada sobre Inteligencia Artificial (IA) a sus usuarios. Los usuarios pueden registrarse para acceder a noticias y artículos relacionados con el tema de la IA. Además, IAccesories ofrece un foro donde los usuarios pueden interactuar y discutir sobre la IA, compartir opiniones y conocimientos. La aplicación busca ser una plataforma para que los usuarios interesados en la IA puedan conectarse, aprender y crecer en su comprensión de la tecnología emergente."
-        android:textColor="@color/white"
-        android:textSize="40px" />
-
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -31,19 +31,27 @@ public class PantallaPrincipal extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                Log.d("---", ""+ item.getItemId());
                 switch (item.getItemId()) {
                     case R.id.Inicio:
+                        Log.d("--->","Entra?");
                         fragment = new InicioFragment();
+                        //Com carregar els fragments
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
                         return true;
                     case R.id.Noticias:
+                        Log.d("--->","EntraNoticias?");
                         fragment = new NoticiasFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
                         return true;
                     case R.id.Foro:
+                        Log.d("--->","EntraForo?");
                         fragment = new ForoFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
                         return true;
                     case R.id.Contacto:
+                        Log.d("--->","EntraContacto?");
                         fragment = new ContactoFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
                         return true;
                 }
 

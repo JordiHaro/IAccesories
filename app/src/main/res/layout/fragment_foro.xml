@@ -3,14 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InicioFragment">
+    tools:context=".ForoFragment">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Foro Fragment"
+        android:text="Chat Grupal"
         android:textSize="25dp"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="25dp"
         />
+
+    <EditText
+        android:id="@+id/ET_Mensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="75dp"
+        android:hint="Escribe un mensajes">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/BT_Enviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:text="Enviar">
+    </Button>
 
 
 </RelativeLayout>
