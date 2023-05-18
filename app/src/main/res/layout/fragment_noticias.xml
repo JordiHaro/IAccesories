@@ -33,7 +33,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/Noticias"
-        android:layout_marginBottom="60dp">
+        android:layout_marginBottom="60dp"
+        android:divider="@drawable/dividir"
+        android:dividerHeight="25dp">
     </ListView>
 
 

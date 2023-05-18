@@ -45,18 +45,32 @@ public class ForoFragment extends Fragment {
         Log.d("--->", mUsuariActual.getEmail());
 
         BuscarUsuario();
+        
+        LlistarMissatges();
 
         mBT_Enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                String mensaje = mET_Mensaje.getText().toString().trim();
+                String uid = mReference.push().getKey();
+
+                Missatge missatge = new Missatge(nombreUsuario, mensaje, uid);
+
+                mReference.child("Mensajes").child(uid).setValue(missatge);
+
                 //Guardar el missatge a la bbdd
                 //El missatge te el missatge que escriu y qui l'escriu.
+                
+               
 
             }
         });
 
         return v;
+    }
+
+    private void LlistarMissatges() {
     }
 
     private void BuscarUsuario() {
@@ -78,3 +92,30 @@ public class ForoFragment extends Fragment {
         });
     }
 }
+
+
+//MANERA PARA HACER UN CONTACTO A TRAVES DEL EMAIL Y QUE CUANDO LE DEN A ENVIAR SE VAYA AL EMAIL.
+//public void enviarCorreo(View view) {
+//    // Obtén los datos del formulario de contacto
+//    EditText etNombre = findViewById(R.id.et_nombre);
+//    EditText etEmail = findViewById(R.id.et_email);
+//    EditText etMensaje = findViewById(R.id.et_mensaje);
+//
+//    String nombre = etNombre.getText().toString();
+//    String email = etEmail.getText().toString();
+//    String mensaje = etMensaje.getText().toString();
+//
+//    // Crea el Intent para enviar correo electrónico
+//    Intent intent = new Intent(Intent.ACTION_SEND);
+//    intent.setType("text/plain");
+//    intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"correo_destino@gmail.com"});  // Reemplaza con tu dirección de correo destino
+//    intent.putExtra(Intent.EXTRA_SUBJECT, "Mensaje de contacto");
+//    intent.putExtra(Intent.EXTRA_TEXT, "Nombre: " + nombre + "\nEmail: " + email + "\nMensaje: " + mensaje);
+//
+//    // Verifica si hay una aplicación de correo electrónico instalada
+//    if (intent.resolveActivity(getPackageManager()) != null) {
+//        startActivity(Intent.createChooser(intent, "Enviar correo electrónico"));
+//    } else {
+//        Toast.makeText(this, "No se encontró una aplicación de correo electrónico instalada.", Toast.LENGTH_SHORT).show();
+//    }
+//}

@@ -35,11 +35,12 @@ public class EditorNoticias extends AppCompatActivity {
         BTAñadirNoticia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String Nombre = ETNombre.getText().toString().trim();
                 String Descripcion = ETDescripcion.getText().toString().trim();
                 String uid = mReference.push().getKey();//UUID.randomUUID().toString();//
 
-                Noticia noticia = new Noticia(Nombre, Descripcion, uid);
+                Noticia noticia = new Noticia(Nombre, Descripcion , uid);
 
                 Log.d("---*", noticia.toString());
 
