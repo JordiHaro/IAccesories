@@ -1,16 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ForoFragment">
+    tools:context=".ForoFragment"
+    android:background="#444E87">
+
     <TextView
+        android:id="@+id/TV_Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="iAccesories"
+        android:paddingVertical="10dp"
+        android:gravity="center"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/TV_titulcontacto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contacto Fragment"
-        android:textSize="25dp"
+        android:layout_below="@+id/TV_Titulo"
         android:layout_centerInParent="true"
-        />
+        android:layout_marginTop="70dp"
+        android:text="Contacto"
+        android:textColor="@color/white"
+        android:textSize="40dp" />
 
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/TV_titulcontacto"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/edit_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="Ingresa tu correo electrónico"
+            android:layout_marginBottom="16dp"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edit_subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="Ingresa el motivo de la consulta"
+            android:layout_marginBottom="16dp"
+            android:minHeight="48dp"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/edit_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="Ingresa tu mensaje"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
 
 </RelativeLayout>
