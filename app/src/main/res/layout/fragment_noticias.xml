@@ -16,8 +16,6 @@
 
         />
 
-
-
     <Button
         android:id="@+id/BT_EditorNoticias"
         android:layout_width="wrap_content"
