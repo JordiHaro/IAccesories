@@ -4,14 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ForoFragment">
+
     <TextView
+        android:id="@+id/ChatGrupal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
         android:text="Chat Grupal"
         android:textSize="25dp"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="25dp"
-        />
+        android:textColor="@color/black"/>
 
     <EditText
         android:id="@+id/ET_Mensaje"
@@ -21,7 +26,8 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="75dp"
-        android:hint="Escribe un mensajes">
+        android:hint="Escribe un mensajes"
+        android:backgroundTint="@color/black">
 
     </EditText>
 
@@ -31,8 +37,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
-        android:text="Enviar">
+        android:text="Enviar"
+        android:backgroundTint="@color/black">
     </Button>
+
+    <ListView
+        android:id="@+id/LV_Mensajes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ChatGrupal"
+        android:divider="@drawable/dividir"
+        android:dividerHeight="3dp"
+        android:layout_above="@+id/ET_Mensaje">
+    </ListView>
 
 
 </RelativeLayout>

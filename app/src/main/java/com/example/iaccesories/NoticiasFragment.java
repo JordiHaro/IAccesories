@@ -81,9 +81,9 @@ public class NoticiasFragment extends Fragment {
 
                 mListaNoticias.clear();
 
-                for (DataSnapshot pizzaActual: snapshot.getChildren()) {
+                for (DataSnapshot noticiaActual: snapshot.getChildren()) {
 
-                    Noticia noticia = pizzaActual.getValue(Noticia.class);
+                    Noticia noticia = noticiaActual.getValue(Noticia.class);
                     mListaNoticias.add(noticia);
                     Log.d("----***",noticia.toString());
                 }

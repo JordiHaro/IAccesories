@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ForoFragment"
-    android:background="#444E87">
+    android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/TV_Titulo"
@@ -28,7 +28,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="70dp"
         android:text="Contacto"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="40dp" />
 
     <LinearLayout
@@ -45,8 +45,8 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:hint="Ingresa tu correo electrónico"
             android:layout_marginBottom="16dp"
             android:minHeight="48dp" />
@@ -57,8 +57,8 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:hint="Ingresa el motivo de la consulta"
             android:layout_marginBottom="16dp"
             android:minHeight="48dp"
@@ -71,8 +71,8 @@
             android:inputType="textMultiLine"
             android:minLines="3"
             android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:hint="Ingresa tu mensaje"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp" />
@@ -82,9 +82,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enviar"
+            android:backgroundTint="@color/black"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            />
 
     </LinearLayout>
 

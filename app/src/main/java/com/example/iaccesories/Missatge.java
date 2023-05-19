@@ -4,6 +4,10 @@ public class Missatge {
 
     private String nomUsuari, missatge, mUid;
 
+    public Missatge() {
+
+    }
+
 
     public Missatge(String nomUsuari, String missatge, String mUid) {
         this.nomUsuari = nomUsuari;
