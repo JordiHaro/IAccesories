@@ -24,7 +24,10 @@
         android:layout_centerHorizontal="true"
         android:text="Editar Noticias"
         android:visibility="gone"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
         android:layout_alignParentBottom="true"
+        android:textSize="25dp"
         >
     </Button>
 
@@ -35,8 +38,7 @@
         android:layout_below="@+id/Noticias"
         android:layout_marginBottom="60dp"
         android:divider="@drawable/dividir"
-        android:dividerHeight="25dp">
-    </ListView>
+        android:dividerHeight="25dp"></ListView>
 
 
 

@@ -8,28 +8,18 @@
     tools:context=".ForoFragment"
     android:background="#FFFFFF">
 
-    <TextView
-        android:id="@+id/TV_Titulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:text="iAccesories"
-        android:paddingVertical="10dp"
-        android:gravity="center"
-        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/TV_titulcontacto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TV_Titulo"
         android:layout_centerInParent="true"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:text="Contacto"
         android:textColor="@color/black"
-        android:textSize="40dp" />
+        android:textSize="40dp"
+        android:layout_alignParentTop="true"
+        />
 
     <LinearLayout
         android:id="@+id/container"

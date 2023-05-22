@@ -26,8 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navegation"
-        android:layout_marginBottom="-2dp" >
-    </FrameLayout>
+        android:layout_below="@+id/PP_Titulo"
+        android:layout_marginBottom="-2dp"></FrameLayout>
 
 
 
@@ -40,7 +40,11 @@
         android:layout_marginBottom="-1dp"
         android:background="@color/black"
         app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_nav_menu" />
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+
+        />
 
 
 </RelativeLayout>

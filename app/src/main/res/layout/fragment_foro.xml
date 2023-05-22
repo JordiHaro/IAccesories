@@ -15,8 +15,8 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:text="Chat Grupal"
-        android:textSize="25dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/ET_Mensaje"
@@ -45,11 +45,10 @@
         android:id="@+id/LV_Mensajes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/ET_Mensaje"
         android:layout_below="@+id/ChatGrupal"
         android:divider="@drawable/dividir"
-        android:dividerHeight="3dp"
-        android:layout_above="@+id/ET_Mensaje">
-    </ListView>
+        android:dividerHeight="3dp"></ListView>
 
 
 </RelativeLayout>

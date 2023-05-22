@@ -71,9 +71,11 @@ public class NoticiasFragment extends Fragment {
     }
 
     private void ListarNoticias() {
+        if (!isAdded()) {
+            return; //
+        }
 
         mReference.child("Noticias").addValueEventListener(new ValueEventListener() {
-
 
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -84,12 +86,17 @@ public class NoticiasFragment extends Fragment {
                 for (DataSnapshot noticiaActual: snapshot.getChildren()) {
 
                     Noticia noticia = noticiaActual.getValue(Noticia.class);
-                    mListaNoticias.add(noticia);
+                    mListaNoticias.add(0, noticia);
                     Log.d("----***",noticia.toString());
                 }
 
-                mAdapterNoticias = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, mListaNoticias);
+                if (!isAdded()) {
+                    return;
+                }
+
+                mAdapterNoticias = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, mListaNoticias);
                 mLvCarta.setAdapter(mAdapterNoticias);
+                mAdapterNoticias.notifyDataSetChanged();
 
         }
 
