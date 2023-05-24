@@ -28,7 +28,8 @@
         android:layout_marginBottom="75dp"
         android:hint="Escribe un mensajes"
         android:backgroundTint="@color/black"
-        android:textColor="@color/black">
+        android:textColor="@color/black"
+        android:textColorHint="@color/black">
 
     </EditText>
 
@@ -39,7 +40,8 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:text="Enviar"
-        android:backgroundTint="@color/black">
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white">
     </Button>
 
     <ListView
@@ -49,7 +51,8 @@
         android:layout_above="@+id/ET_Mensaje"
         android:layout_below="@+id/ChatGrupal"
         android:divider="@drawable/dividir"
-        android:dividerHeight="3dp"></ListView>
+        android:dividerHeight="3dp"
+        android:backgroundTint="@color/black"></ListView>
 
 
 </RelativeLayout>

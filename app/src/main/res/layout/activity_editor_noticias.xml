@@ -89,7 +89,8 @@
         android:layout_below="@id/ET_Descripcion"
         android:layout_marginTop="50dp"
         android:text="Añadir Noticia"
-        android:backgroundTint="@color/black">
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white">
 
     </Button>
 

@@ -14,8 +14,6 @@
         android:layout_marginTop="50dp"
         android:textColor="@color/black"
         android:layout_marginBottom="20dp"
-
-
         />
 
     <Button
@@ -40,7 +38,8 @@
         android:layout_below="@+id/Noticias"
         android:layout_marginBottom="60dp"
         android:divider="@drawable/dividir"
-        android:dividerHeight="25dp"></ListView>
+        android:dividerHeight="25dp"
+        android:backgroundTint="@color/black"></ListView>
 
 
 
