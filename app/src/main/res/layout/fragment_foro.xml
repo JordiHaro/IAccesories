@@ -27,7 +27,8 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="75dp"
         android:hint="Escribe un mensajes"
-        android:backgroundTint="@color/black">
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black">
 
     </EditText>
 

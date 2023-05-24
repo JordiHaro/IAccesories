@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -62,19 +63,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = mETemail.getText().toString();
                 String password = mETpassword.getText().toString();
 
-                // =====================================================================
-                // He tret el "this" del OnCompleteListener.
-                // Dins del codi onComplete, és on heu de fer les accions que voleu,
-                // per exemple, mostrar un Toast dient que s'ha registrat correctament,
-                // i redirigint a l'usuari a la pantalla principal.
-                // Com a acció important, també haureu de guardar l'usuari a
-                // FirebaseDatabase, ja que el Authentication, només guarda
-                // email i password. En l'objecte Usuari de la Database, hi podeu
-                // guardar el id (que l'haurà generat el FirebaseAuthenticator),
-                // el nom, el email, i les altres dades que cregueu oportunes.
-                // =====================================================================
-
-                // En la pantalla de login, serà semblant, però fent servir el
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -91,11 +79,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 Intent intent2 = new Intent(RegisterActivity.this, LoginActivity.class);
                                 startActivity(intent2);
-
-                                // Guardar l'usuari en el currentUser.
-                                // Guardar usuari a FirebaseDatabase.
-                                // Mostrar Toast.
-                                // Obrir Activity Principal.
                             }
                         })
 
@@ -103,16 +86,14 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onFailure(@NonNull Exception e) {
 
-                                // Mostrar Toast dient que hi ha hagut un
-                                //      error connectant en la base de dades,
-                                //      i que ho tornin a provar.
+                                Toast.makeText(getApplicationContext(), "Ha habido un error en la base de datos", Toast.LENGTH_SHORT).show();
+
                             }
                         });
             }
         });
     }
 
-    //Es crida quan s'obre la pantalla y la funcio que fa es mirar si hi ha un usuari amb la sessio iniciada
     @Override
     protected void onStart() {
         super.onStart();

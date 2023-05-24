@@ -38,8 +38,6 @@ public class ContactoFragment extends Fragment {
             }
         });
 
-
-
         return v;
     }
 
