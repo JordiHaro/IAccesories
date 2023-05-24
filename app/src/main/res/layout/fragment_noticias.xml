@@ -39,7 +39,11 @@
         android:layout_marginBottom="60dp"
         android:divider="@drawable/dividir"
         android:dividerHeight="25dp"
-        android:backgroundTint="@color/black"></ListView>
+        android:backgroundTint="@color/black"
+
+
+        >
+    </ListView>
 
 
 

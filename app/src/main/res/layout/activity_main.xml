@@ -72,9 +72,9 @@
         android:layout_below="@+id/ET_password"
         android:layout_centerInParent="true"
         android:layout_marginTop="25dp"
-        android:text="Acceder"
         android:backgroundTint="@color/black"
-        ></Button>
+        android:text="Acceder"
+        android:textColor="@color/white"></Button>
 
     <TextView
         android:id="@+id/TV_register"
